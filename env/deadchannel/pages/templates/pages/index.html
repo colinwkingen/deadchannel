@@ -1,0 +1,9 @@
+{% if all_user_list %}
+    <ul>
+    {% for user in all_user_list %}
+        <li><a href="/pages/{{ user.name }}/nickname/">{{ user.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nothing here, dude.</p>
+{% endif %}
