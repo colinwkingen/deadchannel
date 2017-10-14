@@ -10,18 +10,21 @@ $(document).ready(function() {
 		return randomColor;
 	}
 		
+	var numBricks = $('brick').length;
+	
 	function randomBrickColor() {
+		$('.letter_block').each(function(i,obj){
 			setTimeout(function(){
 				var color = generateColor();
-				$('.letter_block').css('background-color',generateColor());
+				$(obj).css('background-color',generateColor());
 				console.log('Color: '+color);
 				randomBrickColor();
-			},randomTimer());
+			},randomTimer());			
+		});
 	}
 	
 	function randomTimer() {
-		return Math.floor(Math.random()*5000);
+		return Math.floor(Math.random()*50000);
 	}
 	randomBrickColor();
-	
 });
