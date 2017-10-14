@@ -25,7 +25,13 @@ SECRET_KEY = '6+z&u3l30qb6ap11c4fti8pgfor)vxv$3+rz81!m&-8h6*gav#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'deadchannel.vision',
+    '52.33.31.181',
+    'localhost',
+    '127.0.0.1', 
+    '[::1]',
+]
 
 
 # Application definition
