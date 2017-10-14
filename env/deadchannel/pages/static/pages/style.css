@@ -1,7 +1,16 @@
-body {
-	background-color: black;
+.maincontent {
+	background-color: #000000;
 }
 .letter_block {
 	color: #CCCC00;
-	font-size: 10em;
+	font-size: 15em;
+	width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+	padding-top: -10px;
+	padding-bottom: -10px;
+}
+
+.brick { 
+	padding: 3px !important	;	
 }
