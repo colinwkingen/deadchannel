@@ -2,11 +2,15 @@
 from __future__ import unicode_literals
 
 from django.db import models
+import django.utils.timezone as time
 
 import datetime
+#import uuid
+
+from django.template.defaultfilters import default
 
 class UserManager(models.Manager):
-    
+     
     def create_user(self, name, password):
         user = self.create(name=name, password=password)
         user.dateAdded = datetime.datetime.now()
@@ -15,20 +19,15 @@ class UserManager(models.Manager):
 class User(models.Model):
     objects = UserManager()
     
-    name = models.CharField(max_length=25)
-    password = models.CharField(max_length=25)
-    dateAdded = models.DateTimeField('date added')
-    profile_id =  models.CharField(max_length=25)
-    
-    def add_profile(self, profile):
-        profile.user = self.profile_id
-        
+    name = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    dateAdded = models.DateTimeField('date added',default=time.now())
 
 
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    nickname = models.CharField(max_length=25)
-    details = models.CharField(max_length=250)
+    nickname = models.CharField(max_length=200)
+    details = models.CharField(max_length=200)
     score = models.IntegerField(default=0)
     
     def __str__(self):
