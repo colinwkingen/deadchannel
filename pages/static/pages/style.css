@@ -12,5 +12,15 @@
 }
 
 .brick { 
-	padding: 3px !important	;	
+	padding: 4px !important	;	
+}
+
+.lightText {
+	color: #FFF;
+	font-size: 1em;
+	width: 100%;
+	padding-top: -10px;
+	padding-bottom: -10px;
+	display: inline-block;
+	word-wrap: break-word;
 }
